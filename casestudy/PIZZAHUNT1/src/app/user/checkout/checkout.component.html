@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
+
+  <!-- fafa -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w780">
+      <div class="card card-3 iregister">
+        <div class="card-body">
+          <h2 class="title" style="text-align: center;">Order Summary</h2>
+
+          <table class="table table-hover w-50 h-30" style="background-color: white;   box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.5);">
+
+              <tbody>
+                <tr>
+                  <th scope="row">Customer Name</th>
+
+                  <td>{{name}}</td>
+
+                </tr>
+                <tr>
+
+                  <th scope="row">Customer Email</th>
+                  <td >{{email}}</td>
+
+                </tr>
+                <!-- <tr>
+                  <th scope="row">Customer Phone no:</th>
+                  <td >{{contact}}</td>
+                </tr> -->
+
+                <!-- <tr>
+                  <th scope="row">Pizza Quantity</th>
+                  <td></td>
+              </tr> -->
+              <!-- <tr *ngFor="let product of products">
+                <th scope="row">product</th>
+                <td>{{product.productName}}</td>
+            </tr> -->
+
+
+              <tr>
+                  <th scope="row">Grand Total</th>
+                  <td>{{grandTotal}}</td>
+              </tr>
+              <!-- <tr>
+                <th scope="row">Address</th>
+                <td><input type="text" id="userAddress" formControlName="userAddress"></td>
+            </tr> -->
+
+              </tbody>
+            </table>
+            <div>
+
+
+            <button [routerLink]="['/userhome']" class="btn btn--pill btn--green" type="submit" style="margin-left: 100px ;">Shop More</button>
+            <button  (click)="placeorder()" class="btn btn--pill btn--green" type="submit" style="margin-left: 120px;">Place order</button>
+
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

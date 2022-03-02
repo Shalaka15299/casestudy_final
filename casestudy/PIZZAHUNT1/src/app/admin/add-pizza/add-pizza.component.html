@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+</head>
+<body>
+
+  <app-admin-header></app-admin-header>
+  <div class="header">
+  </div>
+  <h1 class="text-center">Add Pizza</h1>
+<div class="container">
+  <div class="container-fluid" >
+    <div class="d-flex">
+      <button type="button"  (click)="clickAddProduct()" data-toggle="modal" data-target="#exampleModal" class="btn btn-success">
+        Add Product
+      </button>
+    </div>
+  </div>
+<div class="table-responsive">
+<table class="table mt-3 table-hover"  style="background-color: white; margin-top: 100px;  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.5);">
+
+  <thead>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">product Name </th>
+      <th scope="col">product Size </th>
+      <th scope="col">product Price</th>
+      <th scope="col">productImage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of productData; index as i">
+      <td>{{i+1}}</td>
+      <!-- <td>{{data.id}}</td> -->
+      <td>{{data.productName}}</td>
+      <td>{{data.productSize}}</td>
+      <td>{{data.productPrice}}</td>
+      <td>{{data.productImage}}</td>
+      <td>
+        <button type="button" (click)="onEdit(data)" data-toggle="modal" data-target="#exampleModal"  class="btn btn-info">Edit</button>
+        <button  class="btn btn-danger mx-3" (click)="deleteProduct(data)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label for="firstname" class="form-label">product Name </label>
+            <input type="text" class="form-control" id="firstname" formControlName="productName" placeholder="Enter Product Name">
+            <span class="text-danger" *ngIf="formValue.controls['productName'].dirty && formValue.hasError('required','productName')">Product name is required</span>
+          </div>
+          <div class="mb-3">
+            <label for="lastname" class="form-label">productSize </label>
+            <select class="form-control" id="productSize" formControlName="productSize" placeholder="Select Product Size ">
+              <option value="">Please Select Product Size</option>
+              <option value="Regular 7">Regular 7</option>
+              <option value="Big 10">Big 10</option>
+              <option value="Large">Large</option>
+            </select>
+
+            <!-- <input type="text" class="form-control" id="productSize" formControlName="productSize" placeholder="Enter Product Size "> -->
+            <span class="text-danger" *ngIf="formValue.controls['productSize'].dirty && formValue.hasError('required','productSize')">Product Size is required</span>
+
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">product Price</label>
+            <input type="text" class="form-control" id="email" formControlName="productPrice" placeholder="Enter Product Price">
+            <span class="text-danger" *ngIf="formValue.controls['productPrice'].dirty && formValue.hasError('required','productPrice')">Product Price is required</span>
+
+          </div>
+          <div class="mb-3">
+            <label for="contact" class="form-label">product Image </label>
+            <input type="text" class="form-control" id="contact" formControlName="productImage" placeholder="Enter image path">
+            <span class="text-danger" *ngIf="formValue.controls['productImage'].dirty && formValue.hasError('required','productImage')">Image path is required</span>
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" [disabled]="!formValue.valid" *ngIf="showAdd" (click)="postProductDetails()" class="btn btn-primary">Add </button>
+        <button type="button" [disabled]="!formValue.valid" *ngIf="showUpdate" (click)="updateProductDetails()" class="btn btn-primary">Update </button>
+
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

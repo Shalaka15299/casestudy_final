@@ -1,0 +1,58 @@
+.container{
+  margin-top: 50px;
+  margin-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.table{
+  margin-top: 100px;
+  margin-bottom: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+th,td{
+text-align: center;
+}
+
+.header{
+  width:100%;
+  min-height: 200px;
+  background-image: url("../../../assets/pic/pizza-slice.jpg");
+ background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  background-attachment: fixed;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  /* clip-path: polygon(100% 0%,100% 75%,50% 100%,0% 75%,0% 0%); */
+}
+
+button{
+  outline: none;
+}
+
+@media all and (max-width:900px){
+  .container{
+    margin-top: 50px;
+    margin-bottom: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+  }
+
+}
+
+@media all and (max-width:300px){
+  .container{
+    margin-top: 50px;
+    margin-bottom: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    scroll-behavior: auto;
+  }
+
+}

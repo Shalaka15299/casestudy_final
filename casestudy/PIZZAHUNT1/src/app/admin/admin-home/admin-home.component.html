@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <app-admin-header></app-admin-header>
+  <div class="header">
+  </div>
+  <h1 class="text-center">Orders</h1>
+  <div class="container">
+    <!-- <div class="container-fluid" > -->
+      <div class="d-flex">
+  <div class="table-responsive">
+  <table class="table mt-3 table-hover"  style="background-color: white; margin-top: 100px;  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.5);">
+    <thead>
+    <tr>
+      <th scope="col">NO</th>
+      <th scope="col">User Id</th>
+      <th scope="col">Name</th>
+
+      <th scope="col">Payment Mode</th>
+      <th scope="col">grandTotal</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orderList;index as i">
+      <th scope="row">{{i+1}}</th>
+      <td>{{order.userid}}</td>
+      <td>{{order.userName}}</td>
+
+      <td>{{order.paymentMode}}</td>
+      <td>{{order.grandTotal}}</td>
+      <td>{{order.orderStatus}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>

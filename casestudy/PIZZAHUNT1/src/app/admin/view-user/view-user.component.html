@@ -1,0 +1,39 @@
+<html>
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<body>
+  <app-admin-header></app-admin-header>
+  <div class="header">
+  </div>
+  <h1 class="text-center">Users Data</h1>
+  <div class="container">
+    <!-- <div class="container-fluid" > -->
+      <div class="d-flex">
+  <div class="table-responsive">
+    <table class="table mt-3 table-hover"  style="background-color: white; margin-top: 100px;  box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.5);">
+
+    <thead>
+      <tr>
+        <th scope="col"><span class="flex-1">No</span></th>
+        <th scope="col"><span class="flex-1">Name</span></th>
+        <th scope="col"><span class="flex-1">E-mail</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userList;index as i">
+        <th scope="row">{{i+1}}</th>
+        <td>{{user.userName}}</td>
+        <td>{{user.userEmail}}</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+      <div class="wrapper wrapper--w780">
+        <div class="card card-3 ilogin">
+          <div class="card-body">
+
+            <h2 class="title">Admin Login </h2>
+
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+              <div class="input-group">
+                <i class="fa fa-user" aria-hidden="true" style="color: white;"></i>
+                <input class="input--style-3" type="name" placeholder="Enter Your Name" name="username" username ngModel required #username="ngModel" >
+              </div>
+              <div class="input-group">
+                <i class="fa fa-key" aria-hidden="true" style="color: white;"></i>
+                <input class="input--style-3" type="password" placeholder="Enter password" name="password" autocomplete="off"
+                 ngModel required #password="ngModel">
+              </div>
+              <div class="p-t-10">
+                <button class="btn btn--pill btn--green" type="submit">Login</button>
+                <button class="btn btn--pill btn--green" style="margin-left: 10px;" type="reset" href= >Reset</button>
+              </div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+</body>
+
+</html>

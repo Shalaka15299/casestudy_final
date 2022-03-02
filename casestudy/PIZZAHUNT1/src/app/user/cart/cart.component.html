@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- <link rel='stylesheet' type='text/css' media='screen' href='uhome.css'> -->
+  <!-- nav font -->
+  <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+
+
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    crossorigin="anonymous">
+
+
+  <!-- fafa -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+  <app-navbar></app-navbar>
+  <!-- </div> -->
+  <div class="container mt-5" *ngIf="products.length != 0">
+  <div class="column" *ngFor="let item of products">
+    <div class="parent">
+      <div class="preview">
+        <!-- <center> -->
+        <img src="../assets/{{item.product.productImage}}" alt="" class="img-responsive">
+        <!-- <img src="../assets/1.jpg" alt="" class="img-responsive"> -->
+        <!-- </center> -->
+      </div>
+
+      <div class="info">
+
+        <table>
+          <tr>
+            <td colspan="2">
+              <h6>{{item.product.productName}}</h6>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h6>Size:-</h6>
+            </td>
+            <td>
+              <h6>{{item.product.productSize}}</h6>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h6>Price:-</h6>
+            </td>
+
+            <td>
+              <h6><span class="product-price">{{item.product.productPrice}}</span>RS</h6>
+            </td>
+
+          </tr>
+
+
+          <tr>
+            <td>
+              <h6>Quantity:-</h6>
+            </td>
+
+            <td>
+              <h6>{{item.quantity}}</h6>
+            </td>
+            <td>
+                <h6>{{item.product.productPrice*item.quantity}}</h6>
+            </td>
+
+          </tr>
+
+        </table>
+
+        <button (click)="removeItem(item)" class="btn btn-danger"> <i class="fa fa-trash" aria-hidden="true"></i></button>
+      </div>
+      <!-- <div>
+        GrandTotal:{{grandTotal}}
+      </div> -->
+    </div>
+
+    </div>
+
+  </div>
+
+
+
+        <!------------------------------------------------total section------------------------------------------------------------------  -->
+
+      <div class="parent" style="background-color:rgb(235, 243, 251);margin-top: 15px;margin-bottom: 150px;" id="lastcol">
+
+        <div class="info">
+          <p style="margin-top: 5px;margin-bottom: 5px;">grand total =<b><span class="gt"> {{grandTotal}}</span>Rs</b></p>
+     	 <td><button class="btn btn-danger" style="margin-left: 30px;" (click)="emptycart();">Empty Cart</button></td>
+              <td><button routerLink="/userhome" style="margin-left: 30px;" class="btn btn-primary">Shop More</button></td>
+         <td><button class="btn btn-success" id="last" style="margin-left: 30px;" [routerLink]="['/checkout']" >Check out</button></td>
+        </div>
+      </div>
+
+      <!-- <ng-container *ngIf="products.length==0">
+        <div class="container">
+          <div class="card">
+            <div class="card-title">My cart</div>
+            <div class="center">
+              <img src="../../../assets/emptycart.jpg" alt="">
+              <h4>your cart is empty</h4>
+              <h6>Add item to it now</h6>
+              <button routerLink="/userhome" class="btn btn-primary">Shop Now</button>
+
+            </div>
+          </div>
+        </div>
+
+      </ng-container> -->
+
+
+
+  <!-- hello -->
+</body>
+
+</html>

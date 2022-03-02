@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- <link rel='stylesheet' type='text/css' media='screen' href='uhome.css'> -->
+  <!-- nav font -->
+  <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    crossorigin="anonymous">
+
+  <!-- fafa -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+  <app-glow></app-glow>
+  <app-navbar></app-navbar>
+  <!-- </div> -->
+
+  <main>
+    <section class="cards">
+
+      <div class="crd" *ngFor="let pizza of productList">
+        <div class="card__image-container">
+          <img src="../../../assets/{{pizza.productImage}}" alt="Detailed image description would go here." style="width: auto; height:100%;" />
+        </div>
+        <div class="card__content">
+          <p class="card__title text--medium" style="text-align: center;">
+            {{pizza.productName}}
+          </p>
+          <p class="card__title text--medium" style="text-align: center;">{{pizza.productSize}}</p>
+          <div class="card__info">
+            <p class="text--medium rs"><b>Rs.{{pizza.productPrice}}</b></p>
+            <!-- <input type="number" name="quantity"  value='1' max="10" min="1" [(ngModel)]='pQuantity' style="width:40px;float: right;" > -->
+            <!-- <select name="pQuantity" [(ngModel)]="pQuantity" id="" class="form-control">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select> -->
+            <select name="pQuantity" [(ngModel)]="pQuantity" id="" class="form-control" style="width: 50px;" >
+              <option selected value="1"  class="text-primary">1</option>
+              <!-- <option value="1">1</option> -->
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+          </select>
+        </div>
+            <p class="card__price text--medium bt">
+               <button id="add" class="btn btn-danger add" (click)="addtocart(pizza,pQuantity)" >+Add</button>
+
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+
+</body>
+
+</html>
